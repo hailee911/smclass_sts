@@ -8,4 +8,5 @@ public interface BoardService {
 
 	ArrayList<BoardDto> blist();
 
+
 }
