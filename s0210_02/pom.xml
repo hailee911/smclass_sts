@@ -103,6 +103,13 @@
 			<version>1.16</version>
 		</dependency>
 		
+		<!--Multipart File Up&Download -->
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.18.0</version>
+		</dependency>
+		
 		
 	</dependencies>
 

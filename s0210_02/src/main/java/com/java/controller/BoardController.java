@@ -1,5 +1,6 @@
 package com.java.controller;
 
+import java.io.File;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +9,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestPart;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.java.dto.BoardDto;
 import com.java.service.BoardService;
@@ -77,7 +80,18 @@ public class BoardController {
 	}
 	
 	@PostMapping("/board/bwrite") //글쓰기 저장
-	public String bwrite(BoardDto bdto) {
+	public String bwrite(BoardDto bdto, @RequestPart MultipartFile files) 
+	throws Exception {
+		bdto.setBfile(""); //첨부파일이 없을때
+		if(!files.isEmpty()) {
+			String origin = files.getOriginalFilename(); // r01.jpg
+			long time = System.currentTimeMillis();
+			String realFileName = String.format("%d_%s", time,origin);
+			String url = "c:/upload/board/";
+			File f = new File(url+realFileName);
+			files.transferTo(f);
+			bdto.setBfile(realFileName);
+		}
 		boardService.bwrite(bdto); //id,btitle,bcontent
 		return "redirect:/board/blist";
 	}
