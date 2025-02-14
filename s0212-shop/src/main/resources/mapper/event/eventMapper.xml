@@ -30,5 +30,13 @@
 	<select id="selectOneCboard" resultType="com.java.dto.CboardDto">
 		select * from cboard where cno=#{cno}
 	</select>
+
+	<update id="updateCboard">
+	  	update cboard set ccontent=#{ccontent}, cdate=sysdate where cno=#{cno}
+	</update>
+
+	<delete id="deleteCboard">
+		delete from cboard where cno=#{cno}
+	</delete>
 	
 </mapper>

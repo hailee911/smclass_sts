@@ -370,8 +370,8 @@
 .replyBox ul li.name span{font-size:12px; color:#888; font-weight:normal;}
 .replyBox ul li.txt{width:100%; color:#888; line-height:1.5; font-size:13px; word-break:keep-all;}
 .replyBox ul li.btn{text-align:right; height:20px; padding:3px 0 0 0;}
-.replyBox ul li.btn .rebtn{display:inline-block; width:43px; height:23px; line-height:22px; color:#777; font-weight:600; text-align:center; background:url('../images/btn/btn_daybtn.gif') left top no-repeat;}
-.replyBox ul li.btn .rebtn:hover{color:#777;}
+.replyBox ul li.btn #rebtn{display:inline-block; width:43px; height:23px; line-height:22px; color:#777; font-weight:600; text-align:center; background:url('../images/btn/btn_daybtn.gif') left top no-repeat;}
+.replyBox ul li.btn #rebtn:hover{color:#777;}
 .replynum{width:82px; height:20px; line-height:20px; border:1px #d9d9d9 solid; padding:0 0 0 5px;}
 .finReply{margin:50px 0 0 0;}
 

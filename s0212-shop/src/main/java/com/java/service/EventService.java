@@ -15,5 +15,10 @@ public interface EventService {
 
 	CboardDto cwrite(CboardDto cdto);
 
+	CboardDto cupdate(CboardDto cdto);
+
+	void cdelete(int cno);
+
+
 
 }
