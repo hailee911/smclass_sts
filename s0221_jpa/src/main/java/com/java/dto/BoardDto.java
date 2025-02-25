@@ -1,6 +1,7 @@
 package com.java.dto;
 
 import java.sql.Timestamp;
+import java.util.List;
 
 import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.annotations.UpdateTimestamp;
@@ -14,6 +15,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.Lob;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 //import jakarta.persistence.SequenceGenerator;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -65,6 +67,10 @@ public class BoardDto {
 	@Column(nullable = true, length = 100)
 	private String bfile;
 
+	// CboardDto의 boardDto를 컬럼을 넣어줌 (BoardDto boardDto 이름을 가져옴)
+	// 테이블을 조인해서 가져오는 것만 하면 됨.
+	@OneToMany(mappedBy = "boardDto", fetch = FetchType.EAGER) // mappedBy: 연관관계의 주인이 아님(난 FK가 아니에요)
+	private List<CboardDto> clist;
 	
 
 }

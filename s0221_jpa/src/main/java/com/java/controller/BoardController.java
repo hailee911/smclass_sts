@@ -62,5 +62,12 @@ public class BoardController {
 		model.addAttribute("boardDto", boardDto);
 		return "bview";
 	}
+	
+	@GetMapping("/bsearch")
+	public String bsearch(int bno, Model model) {
+		BoardDto boardDto = boardService.findById(bno);
+		model.addAttribute("boardDto", boardDto);
+		return "bview";
+	}
 
 }
